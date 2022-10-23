@@ -2,12 +2,13 @@
 <head>
     <script src="scripts.js"></script>
     <script src="jquery-3.6.0.min.js"></script>
-    <link rel="icon" href="favicon.svg">    
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="favicon.svg">
 </head>
 <body>
     <!-- <input id="testingButton" type="button" onclick="runtest()" value="Run Test"> -->
 
-    <input type="file" id="fileInput" accept="image/*">
+    <input type="file" id="fileInput" accept="image/*" onchange="preview()">
     <input type="button" value="Upload!" id="uploadButton" onclick="upload()">
     <span id="messageBox"></span>
     <br>
@@ -18,5 +19,5 @@
     <input type="checkbox" id="edge">
     <br>
     <div id="audioContainer"></div>
-    <div id="imageContainer"></div>
+    <img src="" id="imageDisplay">
 </body>

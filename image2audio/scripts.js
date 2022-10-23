@@ -75,6 +75,11 @@ function upload() {
     reader.readAsDataURL(file);
 }
 
-function runtest(){
+function preview() {
+    globalThis.inputImage = URL.createObjectURL(document.getElementById('fileInput').files[0])
+    document.getElementById('imageDisplay').src
+}
+
+function runtest() {
     console.log($('html').length)
 }
