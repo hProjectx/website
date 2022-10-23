@@ -76,8 +76,9 @@ function upload() {
 }
 
 function preview() {
+    console.log('Previewing')
     globalThis.inputImage = URL.createObjectURL(document.getElementById('fileInput').files[0])
-    document.getElementById('imageDisplay').src
+    document.getElementById('imageDisplay').src = inputImage
 }
 
 function runtest() {

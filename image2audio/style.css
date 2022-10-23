@@ -1,0 +1,19 @@
+:root {
+    --main-color: #a2c7ff;
+    --background-color: #fffcde;
+}
+
+#mainTitle {
+    text-align: center;
+}
+
+#main {
+    text-align: center;
+    background-color: var(--background-color);
+    border-style: solid;
+    border-color: var(--main-color);
+    border-radius: 10px;
+    margin-left: max(30%, 5px);
+    margin-right: max(30%, 5px);
+    padding: 5px;
+}
