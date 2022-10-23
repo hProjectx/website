@@ -5,6 +5,10 @@ function htmlGet(url) {
     return xmlHttp.responseText;
 }
 
+function runtest() {
+    console.log('testing')
+}
+
 function upload() {
     file = document.getElementById('fileInput').files[0];
     inverse = document.getElementById('inverse').checked
@@ -79,8 +83,4 @@ function preview() {
     console.log('Previewing')
     globalThis.inputImage = URL.createObjectURL(document.getElementById('fileInput').files[0])
     document.getElementById('imageDisplay').src = inputImage
-}
-
-function runtest() {
-    console.log($('html').length)
 }
