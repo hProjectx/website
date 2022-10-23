@@ -25,7 +25,6 @@ function upload() {
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            // contentType: 'application/json',
             data: JSON.stringify({'image': base64, 'inverse': +inverse,'edge': +edge}),
             success: function (response) {
                 if (response != 0) {
@@ -42,14 +41,26 @@ function upload() {
         // Callback handler that will be called on success
         request.done(function (response, textStatus, jqXHR){
             // Log a message to the console
+            globalThis.response = response
+            console.log('Response Data:')
             console.log(response)
+            
+            
             if ($('#audioPlayer').length){
-                $('#audioPlayer').attr('src', response)
+                $('#audioPlayer').attr('src', response.audio)
             }
             else {
-                $('#audioContainer').append('<audio controls src=\"'+ response +'\"></audio>')
+                $('#audioContainer').append('<audio controls src=\"'+ response.audio +'\" id="audioPlayer"></audio>')
             }
-            
+
+            if (response.edge_image != null) {
+                if ($('#imageDisplay').length){
+                    $('#imageDisplay').attr('src', response.edge_image)
+                }
+                else {
+                    $('#imageContainer').append('<img src=\"'+ response.edge_image +'\" id=\"imageDisplay\">')
+                }
+            }
         });
     
         // Callback handler that will be called on failure
