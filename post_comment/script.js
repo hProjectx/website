@@ -23,39 +23,6 @@ function initClient() {
 
 // Function to update the sign-in status
 function updateSigninStatus(isSignedIn) {
-    console.log('Status' + isSignedIn)
-    // Your logic for handling sign-in status changes can go here
-}
-
-// Function to start the OAuth process
-function handleAuthClick() {
-    gapi.auth2.getAuthInstance().signIn();
-}
-
-// Function to sign out the user
-function handleSignoutClick() {
-    gapi.auth2.getAuthInstance().signOut();
-}
-
-// Function to post a comment
-function postComment() {
-    var videoInput = document.getElementById('videoInput').value;
-    var commentInput = document.getElementById('commentInput').value;
-
-    // Extract video ID from the input
-    var videoId = extractVideoId(videoInput);
-
-    if (videoId) {
-        // Use the API to post the comment (similar to the previous example)
-        // ...
-
-    } else {
-        alert('Invalid video input. Please enter a valid video ID or link.');
-    }
-}
-
-// Function to update the sign-in status
-function updateSigninStatus(isSignedIn) {
     var authButton = document.getElementById('authButton');
     var postCommentButton = document.getElementById('postCommentButton');
 
@@ -66,6 +33,16 @@ function updateSigninStatus(isSignedIn) {
         authButton.style.display = 'block';
         postCommentButton.disabled = true;
     }
+}
+
+// Function to start the OAuth process
+function handleAuthClick() {
+    gapi.auth2.getAuthInstance().signIn();
+}
+
+// Function to sign out the user
+function handleSignoutClick() {
+    gapi.auth2.getAuthInstance().signOut();
 }
 
 // Function to post a comment
