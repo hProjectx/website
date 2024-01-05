@@ -2,7 +2,7 @@
 const CLIENT_ID = '230339971942-ujtk685hh6rov6ba64i9s90pco9gquu6.apps.googleusercontent.com';
 // const API_KEY = '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';
 const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'];
-const SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
+const SCOPES = 'https://www.googleapis.com/auth/youtube.force-ssl';
 
 // Function to handle the initialization of the API
 function initClient() {
