@@ -9,20 +9,23 @@
 
     <h2>YouTube Comment Poster</h2>
 
-    <button id="authButton" onclick="handleAuthClick()">Authorize</button>
+    <span>Authorization:</span>
+    <span id="authStatus"></span>
+    <br>
+    <button id="authButton" onclick="oauth2SignIn()">Authorize</button>
 
-    <form id="commentForm">
+    <form id="commentForm" style="margin-top: 20px;">
         <label for="videoInput">Video ID or Link:</label>
-        <input type="text" id="videoInput" name="videoInput" required>
-        
+        <input type="text" id="videoInput" name="videoInput" style="width: 400px;" required>
         <br>
-        <label for="commentInput">Your Comment:</label>
-        <textarea id="commentInput" name="commentInput" required></textarea>
-
-        <button type="button" onclick="postComment()" id="postCommentButton" disabled>Post Comment</button>
+        <label for="commentInput" style="vertical-align:top;">Your Comment:</label>
+        <textarea id="commentInput" name="commentInput" style="width: 400px; height: 14px" required></textarea>
+        <br>
+        <button type="button" onclick="postCommentHandel()" id="postCommentButton" disabled>Post Comment</button>
+        <br>
+        <span id="commentPostStatus"></span>
     </form>
 
-    <script src="https://apis.google.com/js/api.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
