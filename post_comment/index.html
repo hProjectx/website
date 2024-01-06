@@ -13,7 +13,8 @@
     <span id="authStatus"></span>
     <br>
     <button id="authButton" onclick="oauth2SignIn()">Authorize</button>
-
+    <button id="removeAuthButton" onclick="window.location.href = CURRENT_LOCATION" hidden>Remove Authorization</button>
+    
     <form id="commentForm" style="margin-top: 20px;">
         <label for="videoInput">Video ID or Link:</label>
         <input type="text" id="videoInput" name="videoInput" style="width: 400px;" required>

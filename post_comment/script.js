@@ -22,6 +22,7 @@ function parse_query_string() {
 function handelLoginState(state) {
     const authStatus = document.getElementById('authStatus');
     const authButton = document.getElementById('authButton');
+    const removeAuthButton = document.getElementById('removeAuthButton');
     const postCommentButton = document.getElementById('postCommentButton');
 
     if (state) {
@@ -29,6 +30,7 @@ function handelLoginState(state) {
         authStatus.style.color = 'green';
         
         authButton.textContent = 'Reauthorize';
+        removeAuthButton.removeAttribute('hidden');
 
         postCommentButton.removeAttribute('disabled');
     } else {
@@ -36,6 +38,8 @@ function handelLoginState(state) {
         authStatus.style.color = 'red';
         
         authButton.textContent = 'Authorize';
+        removeAuthButton.setAttribute('hidden', '');
+
         postCommentButton.setAttribute('disabled', '');
     }
 }
