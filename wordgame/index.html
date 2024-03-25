@@ -4,9 +4,7 @@
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/jquery-ui.min.js"></script>
         <script src="util.js"></script>
         <script>
-            $(document).ready(function(){
-                $("#info").hide()
-                $(".button").click(function(){
+            function submitWord(){
                     var guess = document.getElementById('input-box').value
                     if (guess.length!==5) {
                         $("#info").text('Invalid Length').show().delay(1000).fadeOut('slow');
@@ -38,20 +36,62 @@
                         });
                     }
 
+                }
+        </script>
+        <script>
+            $(document).ready(function(){
+                $("#info").hide()
+
+                $('form').submit(function (evt) {
+                    evt.preventDefault(); //prevents the default action
                 });
+                // $(".button").click(function(){
+                //     var guess = document.getElementById('input-box').value
+                //     if (guess.length!==5) {
+                //         $("#info").text('Invalid Length').show().delay(1000).fadeOut('slow');
+                //         $('#input-container').effect('bounce');
+                //     }
+                //     else {
+                //         console.log(guess)
+                //         $.ajax({
+                //         url: "https://kvdv31d93a.execute-api.us-east-1.amazonaws.com/default/word-game-lambdaCheckAnwser-bNfUkCCAiJtB?guess="+guess,
+                //         type: 'GET',
+                //         crossDomain:true,
+                //         dataType: 'json', // added data type
+                //         success: function(result) {
+                //             console.log(result);
+                //             var code = result.result; //code example: '10221'
+                //             if (code=='invalid-word') {
+                //                 $("#info").text('Invalid Word').show().delay(1000).fadeOut('slow');
+                //                 $('#input-container').effect('bounce');
+                //             } 
+                //             else if (code=='22222') {
+                //                 $("#info").text('Congratulations!').show().attr('style', 'display: inline-block; color: green;')
+                //             }
+                //             else {
+                //                 var renderResult = renderWord(guess, code);
+                //                 $(".output").append('<div class="answer">'+renderResult+'</div>');
+                //                 $("#input-box").val("");
+                //                 }
+                //             }
+                //         });
+                //     }
+
+                // });
             });
         </script>
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <h1 class="title">Word Game</h1>
-        <div id="input-container">
-            <button class="button" id="hidden"></button>
-            <input type="text" id="input-box" oninput="this.value = this.value.toUpperCase()" maxlength = "5" onblur="this.focus()" autofocus>
-            <!-- <div class="button" id="submit"><img src="enter.svg"/></div> -->
-            <button class="button" id="submit"><img src="enter.svg"/></button>
-        </div>
-        <div id="info" style="display: inline-block; color: rgb(255, 255, 255);"></div>
+        <form id="word-form" onsubmit="submitWord()">
+            <div id="input-container">
+                <!-- <button class="button" id="hidden"></button> -->
+                <input type="text" id="input-box" oninput="this.value = this.value.toUpperCase()" maxlength = "5" onblur="this.focus()" autofocus>
+                <input type="image" alt="submit" src="enter.svg" class="button" id="submit"></input>
+            </div>
+        </form>
+        <div id="info" style="display: inline-block; color: white;"></div>
         <div class="output"></div>
     </body>
 </html>

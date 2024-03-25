@@ -43,8 +43,22 @@
     padding-left: 54;
     border: none;
     outline: none;
-    /* caret-color: transparent */
+    pointer-events:none;
+    caret-color: transparent; 
 }
+
+#submit {
+    /* make a round border */
+    border-style: solid;
+    border-color: rgb(150, 150, 150);
+    border-radius: 10px;
+    background-color: rgb(216, 216, 216);
+}
+
+#submit:hover {
+    background-color: rgb(233, 233, 233);
+}
+
 #info {
     position: absolute;
     left: 0; 
