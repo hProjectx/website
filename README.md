@@ -4,5 +4,5 @@
 * [Digit Recognition](digit_all)
 * [Comment Poster](post_comment)
 
-# [Go to Website](https://hproject.xyz)
+# [Go to Website](https://harry0805.github.io/website/)
 # [Go to GitHub Repo](https://github.com/harry0805/website)
